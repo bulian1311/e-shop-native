@@ -1,16 +1,15 @@
 import React from "react";
-import { starIcon } from "./icons/star.icon";
-import { SvgXml } from "react-native-svg";
-
+import { StarIcon } from "./icons/star.icon";
 import { StyledView } from "./rating.styles";
 import { PropsType } from "./rating.props";
+
 export const Rating = ({ rating }: PropsType) => {
   const ratingArray = Array.from(new Array(Math.ceil(rating)));
 
   return (
     <StyledView>
       {ratingArray.map((item, i) => (
-        <SvgXml fill="#fff" width={12} height={12} key={i} xml={starIcon} />
+        <StarIcon fill="#000" key={i} />
       ))}
     </StyledView>
   );
