@@ -1,10 +1,12 @@
 import React from "react";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { HomeScreen } from "./src/screens";
+import { NavigationContainer } from "@react-navigation/native";
+
 import { ClientContext } from "graphql-hooks";
 import { graphQLClient } from "./src/graphql";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/theme";
+import { StackNavigator } from "./src/navigation";
 
 import {
   useFonts as useOswald,
@@ -23,11 +25,14 @@ export default function App() {
   if (!oswaldLoaded || !latoLoaded) return null;
 
   return (
-    <ClientContext.Provider value={graphQLClient}>
-      <ThemeProvider theme={theme}>
-        <HomeScreen />
-        <ExpoStatusBar style="auto" />
-      </ThemeProvider>
-    </ClientContext.Provider>
+    <NavigationContainer>
+      <ClientContext.Provider value={graphQLClient}>
+        <ThemeProvider theme={theme}>
+          <ExpoStatusBar style="auto" />
+
+          <StackNavigator />
+        </ThemeProvider>
+      </ClientContext.Provider>
+    </NavigationContainer>
   );
 }

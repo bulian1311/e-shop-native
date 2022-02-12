@@ -2,17 +2,18 @@ import React from "react";
 import {
   StatusBar,
   StyleSheet,
-  Text,
+  Button,
   View,
   SafeAreaView,
-  ScrollView,
 } from "react-native";
 import { Searchbar } from "react-native-paper";
-import { ProductList } from "../../components";
+import { ProductList } from "../../../components";
 import { useQuery } from "graphql-hooks";
 import { query, queryOptions } from "./home.query";
+import { useNavigation } from "@react-navigation/native";
 
 export const HomeScreen = () => {
+  const navigation: any = useNavigation();
   const { loading, error, data } = useQuery(query, queryOptions);
 
   console.log(data);
@@ -22,6 +23,10 @@ export const HomeScreen = () => {
       <View style={styles.search}>
         <Searchbar testID="" value="" autoComplete={"true"} />
       </View>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate({ name: "Details" })}
+      />
       <ProductList />
     </SafeAreaView>
   );
