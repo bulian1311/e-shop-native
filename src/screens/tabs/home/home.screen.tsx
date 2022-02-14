@@ -1,16 +1,21 @@
 import React from "react";
-import {
-  StatusBar,
-  StyleSheet,
-  Button,
-  View,
-  SafeAreaView,
-} from "react-native";
-import { Searchbar } from "react-native-paper";
+import { StyleSheet, Button, SafeAreaView } from "react-native";
 import { ProductList } from "../../../components";
 import { useQuery } from "graphql-hooks";
 import { query, queryOptions } from "./home.query";
 import { useNavigation } from "@react-navigation/native";
+
+import {
+  HeartIcon,
+  BellIcon,
+  SearchIcon,
+  ArrowIcon,
+  TrashIcon,
+  CartIcon,
+  HomeIcon,
+  OfferIcon,
+  AccountIcon,
+} from "../../../components/atoms/icons";
 
 export const HomeScreen = () => {
   const navigation: any = useNavigation();
@@ -20,13 +25,19 @@ export const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.search}>
-        <Searchbar testID="" value="" autoComplete={"true"} />
-      </View>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate({ name: "Details" })}
       />
+      <HeartIcon stroke="blue" />
+      <BellIcon fill="blue" />
+      <SearchIcon stroke="blue" />
+      <ArrowIcon stroke="blue" />
+      <TrashIcon stroke="blue" />
+      <CartIcon stroke="blue" />
+      <HomeIcon stroke="blue" />
+      <OfferIcon stroke="blue" />
+      <AccountIcon fill="blue" />
       <ProductList />
     </SafeAreaView>
   );
@@ -35,9 +46,5 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  search: {
-    padding: 16,
-    marginTop: StatusBar.currentHeight,
   },
 });

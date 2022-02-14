@@ -1,8 +1,8 @@
 export const colors = {
   ui: {
-    primary: "blue",
+    primary: "#40BFFF",
     secondary: "green",
-    disabled: "grey",
+    disabled: "#9098B1",
     error: "red",
     success: "green",
   },

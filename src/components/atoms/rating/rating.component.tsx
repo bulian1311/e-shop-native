@@ -1,5 +1,5 @@
 import React from "react";
-import { StarIcon } from "./icons/star.icon";
+import { StarIcon } from "../icons/star.icon";
 import { StyledView } from "./rating.styles";
 import { PropsType } from "./rating.props";
 
