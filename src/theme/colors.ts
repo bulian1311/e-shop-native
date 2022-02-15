@@ -1,20 +1,16 @@
 export const colors = {
   ui: {
     primary: "#40BFFF",
-    secondary: "green",
     disabled: "#9098B1",
-    error: "red",
-    success: "green",
+    danger: "#FB7181",
   },
   text: {
-    primary: "blue",
-    secondary: "green",
-    disabled: "grey",
-    error: "red",
-    success: "green",
+    primary: "#40BFFF",
+    disabled: "#9098B1",
+    danger: "#FB7181",
   },
   bg: {
-    primary: "blue",
-    secondary: "red",
+    primary: "#FFFFFF",
+    secondary: "#FFFFFF",
   },
 };

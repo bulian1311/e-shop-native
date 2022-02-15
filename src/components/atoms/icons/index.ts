@@ -8,3 +8,5 @@ export * from "./cart.icon";
 export * from "./home.icon";
 export * from "./offer.icon";
 export * from "./account.icon";
+export * from "./mail.icon";
+export * from "./lock.icon";

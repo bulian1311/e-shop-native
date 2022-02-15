@@ -1,4 +1,4 @@
-export const query = `query getProductPaths($first: Int!) {
+export const query = `query getProducts($first: Int!) {
   products(first: $first) {
     edges {
       node {

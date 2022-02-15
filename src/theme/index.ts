@@ -9,3 +9,5 @@ export const theme = {
   sizes,
   spacing,
 };
+
+export type ThemeType = typeof theme;

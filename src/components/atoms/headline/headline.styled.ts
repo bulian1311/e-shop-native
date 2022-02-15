@@ -1,5 +1,13 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-export const StyledView = styled.View``;
+const styles = ({ color, size }: any) => {
+  let textColor: string;
+  let textSize: string;
+
+  switch (color) {
+  }
+
+  return css``;
+};
 
 export const StyledText = styled.Text``;
