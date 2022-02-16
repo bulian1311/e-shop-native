@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import { ThemeType } from "../../../theme";
 
 export const StyledTextInput = styled.TextInput`
   flex: 1;

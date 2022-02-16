@@ -1,2 +1,2 @@
 export * from "./stack-layout";
-export * from "./container";
+export * from "./tab-layout";

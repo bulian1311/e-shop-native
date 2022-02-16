@@ -1,11 +1,7 @@
 import React from "react";
 import { Props } from "./paragraph.props";
-import { StyledView, StyledText } from "./paragraph.styled";
+import { StyledText } from "./paragraph.styled";
 
-export const Paragraph = ({ ...props }: Props) => {
-  return (
-    <StyledView {...props}>
-      <StyledText>Paragraph</StyledText>
-    </StyledView>
-  );
+export const Paragraph = ({ children, ...props }: Props) => {
+  return <StyledText {...props}>{children}</StyledText>;
 };

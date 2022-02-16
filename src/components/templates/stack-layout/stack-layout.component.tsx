@@ -1,18 +1,16 @@
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
-import { View, TouchableOpacity, Text } from "react-native";
 import { Props } from "./stack-layout.props";
+import { Container, TopBarBack } from "../..";
+import { StyledView, StyledText } from "./stack-layout.styled";
 
 export const StackLayout = ({ children, ...props }: Props) => {
-  const navigation = useNavigation();
-
   return (
-    <View {...props}>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>Назад</Text>
-      </TouchableOpacity>
-
-      <View>{children}</View>
-    </View>
+    <Container>
+      <TopBarBack title="Back" />
+      <StyledView {...props}>
+        <StyledText>StackLayout</StyledText>
+        {children}
+      </StyledView>
+    </Container>
   );
 };

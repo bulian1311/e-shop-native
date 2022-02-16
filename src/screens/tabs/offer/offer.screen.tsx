@@ -1,11 +1,12 @@
 import React from "react";
 import { Props } from "./offer.props";
+import { TabLayout } from "../../../components";
 import { StyledView, StyledText } from "./offer.styled";
 
 export const OfferScreen = ({ ...props }: Props) => {
   return (
-    <StyledView {...props}>
+    <TabLayout {...props}>
       <StyledText>OfferScreen</StyledText>
-    </StyledView>
+    </TabLayout>
   );
 };

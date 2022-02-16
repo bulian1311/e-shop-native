@@ -4,16 +4,16 @@ export const fonts = {
     heading: "Lato_400Regular",
     monospace: "Oswald_400Regular",
   },
-  weigth: {
+  weight: {
     regular: 400,
     medium: 500,
     bold: 700,
   },
   size: {
-    caption: "12px",
+    caption: "10px",
+    body: "12px",
     button: "14px",
-    body: "16px",
-    title: "20px",
+    title: "16px",
     h1: "24px",
     h2: "16px",
     h3: "14px",

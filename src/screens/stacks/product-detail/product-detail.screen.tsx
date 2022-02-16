@@ -1,11 +1,11 @@
 import React from "react";
 import { Text } from "react-native";
-import { StackLayout } from "../../../components";
+import { View } from "react-native";
 
 export const ProductDetailsScreen = () => {
   return (
-    <StackLayout>
+    <View>
       <Text>Details</Text>
-    </StackLayout>
+    </View>
   );
 };

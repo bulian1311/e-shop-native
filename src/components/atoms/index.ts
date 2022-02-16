@@ -4,3 +4,4 @@ export * from "./button";
 export * from "./headline";
 export * from "./paragraph";
 export * from "./spacer";
+export * from "./container";

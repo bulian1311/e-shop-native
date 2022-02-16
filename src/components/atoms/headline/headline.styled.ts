@@ -1,13 +1,10 @@
 import styled, { css } from "styled-components/native";
+import { Props } from "./headline.props";
 
-const styles = ({ color, size }: any) => {
-  let textColor: string;
-  let textSize: string;
-
-  switch (color) {
-  }
-
-  return css``;
-};
-
-export const StyledText = styled.Text``;
+export const StyledText = styled.Text<Props>`
+  ${({ theme, size = "h1", color = "dark", weight = "medium" }) => css`
+    color: ${theme.colors.text[color]};
+    font-size: ${theme.fonts.size[size]};
+    font-weight: ${theme.fonts.weight[weight]};
+  `}
+`;
