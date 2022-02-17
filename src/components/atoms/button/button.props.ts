@@ -1,4 +1,7 @@
 import { ComponentProps } from "react";
-import { View } from "react-native";
+import { TouchableOpacity } from "react-native";
 
-export type Props = ComponentProps<typeof View> & {};
+export type Props = ComponentProps<typeof TouchableOpacity> & {
+  title: string;
+  color?: "primary" | "ghost";
+};
