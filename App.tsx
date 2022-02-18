@@ -9,20 +9,20 @@ import { theme } from "./src/theme";
 import { StackNavigator } from "./src/navigation";
 
 import {
-  useFonts as useOswald,
-  Oswald_400Regular,
-} from "@expo-google-fonts/oswald";
-import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+  useFonts,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_700Bold,
+} from "@expo-google-fonts/poppins";
 
 export default function App() {
-  const [oswaldLoaded] = useOswald({
-    Oswald_400Regular,
-  });
-  const [latoLoaded] = useLato({
-    Lato_400Regular,
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_700Bold,
   });
 
-  if (!oswaldLoaded || !latoLoaded) return null;
+  if (!fontsLoaded) return null;
 
   return (
     <NavigationContainer>

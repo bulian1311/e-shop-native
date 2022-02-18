@@ -1,8 +1,8 @@
 export const fonts = {
   fonts: {
-    body: "Oswald_400Regular",
-    heading: "Lato_400Regular",
-    monospace: "Oswald_400Regular",
+    body: "Poppins_400Regular",
+    subheading: "Poppins_500Medium",
+    heading: "Poppins_700Bold",
   },
   weight: {
     regular: 400,

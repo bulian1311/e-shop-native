@@ -11,11 +11,29 @@ export const HomeScreen = () => {
   return (
     <TabLayout>
       <Spacer pos="top" size="large" />
+
+      <Carousel
+        items={[
+          <Hero
+            title="Recomended products"
+            description="We recommend the best for you"
+          />,
+          <Hero
+            title="Recomended products"
+            description="We recommend the best for you"
+          />,
+          <Hero
+            title="Recomended products"
+            description="We recommend the best for you"
+          />,
+        ]}
+        isPlaying
+      />
+      <Spacer pos="top" size="large" />
       <Hero
         title="Recomended products"
         description="We recommend the best for you"
       />
-      <Carousel />
     </TabLayout>
   );
 };

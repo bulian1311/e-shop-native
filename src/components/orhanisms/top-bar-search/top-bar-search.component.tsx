@@ -19,7 +19,9 @@ export const TopBarSearch = ({ ...props }: Props) => {
       <IconContainer onPress={() => navigation.navigate({ name: "Favorites" })}>
         <HeartIcon />
       </IconContainer>
-      <IconContainer>
+      <IconContainer
+        onPress={() => navigation.navigate({ name: "Notifications" })}
+      >
         <BellIcon />
       </IconContainer>
     </StyledView>
