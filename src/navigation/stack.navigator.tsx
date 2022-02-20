@@ -5,6 +5,7 @@ import {
   FavoritesScreen,
   ProductDetailsScreen,
   NotificationsScreen,
+  CategoriesScreen,
 } from "../screens";
 
 const Stack = createNativeStackNavigator();
@@ -16,6 +17,7 @@ export const StackNavigator = () => {
       <Stack.Screen name="Favorites" component={FavoritesScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />
       <Stack.Screen name="Details" component={ProductDetailsScreen} />
+      <Stack.Screen name="Categories" component={CategoriesScreen} />
     </Stack.Navigator>
   );
 };

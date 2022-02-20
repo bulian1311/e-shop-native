@@ -5,6 +5,7 @@ const sizes = {
   small: 1,
   medium: 2,
   large: 3,
+  extraLarge: 4,
 };
 
 const positions = {
@@ -15,7 +16,7 @@ const positions = {
 };
 
 export const StyledView = styled.View<Props>`
-  ${({ pos = "top", size = "large", theme }) => css`
+  ${({ pos = "top", size = "medium", theme }) => css`
     ${positions[pos]}: ${theme.spacing.space[sizes[size]]};
   `};
 `;
