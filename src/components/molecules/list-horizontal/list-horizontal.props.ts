@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
-import { View } from "react-native";
+import { FlatList } from "react-native";
 
-export type Props = ComponentProps<typeof View> & {
+export type Props = ComponentProps<typeof FlatList> & {
   title: string;
   navigateTo: string;
 };

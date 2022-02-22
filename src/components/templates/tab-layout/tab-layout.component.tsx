@@ -8,7 +8,9 @@ export const TabLayout = ({ children, ...props }: Props) => {
   return (
     <Container>
       <TopBarSearch />
-      <StyledView {...props}>{children}</StyledView>
+      <StyledView showsVerticalScrollIndicator={false} {...props}>
+        {children}
+      </StyledView>
     </Container>
   );
 };

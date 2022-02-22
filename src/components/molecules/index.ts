@@ -1,4 +1,4 @@
-export * from "./product-card";
+export * from "./product-item";
 export * from "./search-field";
 export * from "./hero";
 export * from "./nav-back";

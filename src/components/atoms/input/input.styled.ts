@@ -7,7 +7,7 @@ export const StyledTextInput = styled.TextInput`
 
 export const Container = styled.View<{ focus: boolean }>`
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.radius[1]};
   border-color: ${(props) =>
     props.focus
       ? props.theme.colors.ui.primary

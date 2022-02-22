@@ -6,7 +6,7 @@ export const StyledTouchableOpacity = styled.TouchableOpacity<Props>`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: ${theme.radius[1]};
     padding: ${theme.sizes[1]}
       ${color === "primary" && `background-color: ${theme.colors.ui.primary}`};
     ${color === "ghost" && `border-width: 1px`};

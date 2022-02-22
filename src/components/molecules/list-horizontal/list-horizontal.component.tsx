@@ -2,26 +2,25 @@ import React from "react";
 import { Headline, Spacer } from "../../atoms";
 import { NavLink } from "../../molecules";
 import { Props } from "./list-horizontal.props";
-import { StyledView, StyledScrollView } from "./list-horizontal.styled";
+import { StyledView, StyledFlatList } from "./list-horizontal.styled";
 
-export const ListHorizontal = ({ children, title, navigateTo }: Props) => {
+export const ListHorizontal = ({ title, navigateTo, ...props }: Props) => {
   return (
     <React.Fragment>
       <StyledView>
         <Headline size="h3" color="dark">
           {title}
         </Headline>
-        <NavLink title="Categories" navigateTo={navigateTo} />
+        <NavLink title="See More" navigateTo={navigateTo} />
       </StyledView>
 
       <Spacer pos="top" size="medium" />
 
-      <StyledScrollView
+      <StyledFlatList
+        {...props}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-      >
-        {children}
-      </StyledScrollView>
+      />
     </React.Fragment>
   );
 };
