@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { Animated, Dimensions } from "react-native";
 
 export const StyledAnimatedView = styled(Animated.View)`
@@ -6,7 +6,7 @@ export const StyledAnimatedView = styled(Animated.View)`
 `;
 
 export const StyledView = styled.View`
-  width: ${Dimensions.get("screen").width}px;
+  width: ${Dimensions.get("screen").width - 32}px;
 `;
 
 export const IndicatorsContainer = styled.View`
@@ -16,10 +16,13 @@ export const IndicatorsContainer = styled.View`
 `;
 
 export const Indicator = styled.View<{ isActive: boolean }>`
-  width: ${({ theme }) => theme.sizes[0]};
-  height: ${({ theme }) => theme.sizes[0]};
-  border-radius: 50%;
-  margin-right: ${({ theme }) => theme.sizes[0]};
-  background-color: ${({ theme, isActive }) =>
-    isActive ? theme.colors.ui.primary : theme.colors.ui.ghost};
+  ${({ theme, isActive }) => css`
+    width: ${theme.sizes[1]};
+    height: ${theme.sizes[1]};
+    border-radius: ${theme.sizes[0]};
+    margin-right: ${theme.sizes[1]};
+    background-color: ${isActive
+      ? theme.colors.ui.primary
+      : theme.colors.ui.ghost};
+  `}
 `;

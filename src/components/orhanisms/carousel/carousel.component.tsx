@@ -12,7 +12,7 @@ import {
 export const Carousel = ({ isPlaying, items }: Props) => {
   const animation = useRef(new Animated.Value(0));
   const [currentItem, setCurrentItem] = useState(0);
-  const MAX_WIDTH = Dimensions.get("screen").width;
+  const MAX_WIDTH = Dimensions.get("screen").width - 32;
   useInterval(() => handleAnimation(), isPlaying ? 2000 : null);
 
   const handleAnimation = () => {

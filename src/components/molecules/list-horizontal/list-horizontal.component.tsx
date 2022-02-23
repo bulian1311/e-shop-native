@@ -1,6 +1,6 @@
 import React from "react";
 import { Headline, Spacer } from "../../atoms";
-import { NavLink } from "../../molecules";
+import { NavLink } from "../nav-link";
 import { Props } from "./list-horizontal.props";
 import { StyledView, StyledFlatList } from "./list-horizontal.styled";
 

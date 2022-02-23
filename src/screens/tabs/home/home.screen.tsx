@@ -9,6 +9,7 @@ import {
   CategoryListHorizontal,
   FlashSale,
   MegaSale,
+  ProductList,
 } from "../../../components";
 
 export const HomeScreen = () => {
@@ -56,6 +57,10 @@ export const HomeScreen = () => {
         title="Recomended products"
         description="We recommend the best for you"
       />
+
+      <Spacer pos="top" size="large" />
+
+      <ProductList />
 
       <Spacer pos="top" size="large" />
     </TabLayout>

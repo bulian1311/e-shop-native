@@ -1,1 +1,1 @@
-export type PropsType = {};
+export type Props = {};

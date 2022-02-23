@@ -8,5 +8,5 @@ export const StyledView = styled.View`
   margin-right: 12px;
   border-width: 1px;
   border-color: ${({ theme }) => theme.colors.ui.ghost};
-  border-radius: 50%;
+  border-radius: 35px;
 `;

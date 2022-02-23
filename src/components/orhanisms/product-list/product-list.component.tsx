@@ -1,24 +1,29 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
-
+import { StyledFlatList } from "./product-lisr.styled";
 import { ProductItem } from "../../molecules";
+
+const products = [
+  { id: "qweqweqwe1", title: "Phone dexp 1", price: 29.99 },
+  { id: "qweqweqwe2", title: "Phone dexp 2", price: 29.99 },
+  { id: "qweqweqwe3", title: "Phone dexp 3", price: 29.99 },
+  { id: "qweqweqwe4", title: "Phone dexp 4", price: 29.99 },
+];
 
 export const ProductList = () => {
   return (
-    <View style={styles.list}>
-      <Text>qqq list</Text>
-      <FlatList
-        data={[1, 2, 3, 4, 5, 6, 7, 8]}
-        renderItem={(product) => <ProductItem product={product} />}
-        keyExtractor={(it, i) => `qq ${i + it}`}
-        scrollEnabled={false}
-        // numColumns={2}
-        //horizontal={true}
-      />
-    </View>
+    <StyledFlatList
+      data={products}
+      renderItem={({ item }) => <ProductItem size="medium" product={item} />}
+      keyExtractor={(item: any) => item.id}
+      // scrollEnabled={false}
+      numColumns={2}
+      showsVerticalScrollIndicator={false}
+      maxToRenderPerBatch={4} //render only 4 items per scroll.
+      columnWrapperStyle={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginBottom: 12,
+      }}
+    />
   );
 };
-
-const styles = StyleSheet.create({
-  list: { padding: 16, backgroundColor: "blue", flex: 1 },
-});
