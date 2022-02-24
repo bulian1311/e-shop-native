@@ -6,7 +6,7 @@ export const StyledAnimatedView = styled(Animated.View)`
 `;
 
 export const StyledView = styled.View`
-  width: ${Dimensions.get("screen").width - 32}px;
+  width: ${Dimensions.get("window").width}px;
 `;
 
 export const IndicatorsContainer = styled.View`

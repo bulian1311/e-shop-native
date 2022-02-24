@@ -1,6 +1,7 @@
 import React from "react";
 import { Paragraph, Headline, Rating, Spacer } from "../../atoms";
-import {} from "../../atoms/icons";
+import { NavLink } from "../../molecules";
+import { TrashIcon } from "../../atoms/icons";
 import { Props } from "./product-item.props";
 import {
   StyledView,
@@ -11,12 +12,14 @@ import {
 let img =
   "https://c.dns-shop.ru/thumb/st4/fit/500/500/1ea46f7b719ca9a0d48d18a08e3d9499/6dd7b85859f43f84142cfaf5dd62cb9d274f6173bea8fffc1c7e121e0b8004ef.jpg.webp";
 
-export const ProductItem = ({ size, product, ...props }: Props) => {
+export const ProductItem = ({ size, product, withTrash, ...props }: Props) => {
   return (
     <StyledView size={size} product={product} {...props}>
       <StyledImage source={{ uri: img }} />
       <Spacer pos="top" size="medium" />
-      <Headline size="h4">{product.title}</Headline>
+      <NavLink navigateTo="Details">
+        <Headline size="h4">{product.title}</Headline>
+      </NavLink>
 
       <Spacer pos="top" size="medium" />
 
@@ -42,6 +45,12 @@ export const ProductItem = ({ size, product, ...props }: Props) => {
         <Paragraph weight="bold" color="danger">
           10% Off
         </Paragraph>
+        {withTrash && (
+          <>
+            <Spacer pos="left" size="large" />
+            <TrashIcon />
+          </>
+        )}
       </DiscountContainer>
     </StyledView>
   );
