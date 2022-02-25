@@ -4,12 +4,12 @@ import { Headline } from "../../atoms";
 import { Props } from "./nav-link.props";
 import { StyledTouchableOpacity } from "./nav-link.styled";
 
-export const NavLink = ({ title, children, navigateTo }: Props) => {
+export const NavLink = ({ title, children, navigateTo, params }: Props) => {
   const navigation: any = useNavigation();
 
   return (
     <StyledTouchableOpacity
-      onPress={() => navigation.navigate({ name: navigateTo })}
+      onPress={() => navigation.navigate({ name: navigateTo, params: params })}
     >
       <Headline size="h3" color="primary">
         {title}

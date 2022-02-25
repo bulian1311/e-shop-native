@@ -1,6 +1,6 @@
 import React from "react";
 
 export type Props = {
-  isPlaying: boolean;
+  isPlaying?: boolean;
   items: React.ReactNode[];
 };

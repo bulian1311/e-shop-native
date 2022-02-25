@@ -1,7 +1,7 @@
 import React from "react";
 import { Paragraph, Headline, Rating, Spacer } from "../../atoms";
-import { NavLink } from "../../molecules";
 import { TrashIcon } from "../../atoms/icons";
+import { NavLink } from "../nav-link";
 import { Props } from "./product-item.props";
 import {
   StyledView,
@@ -17,7 +17,7 @@ export const ProductItem = ({ size, product, withTrash, ...props }: Props) => {
     <StyledView size={size} product={product} {...props}>
       <StyledImage source={{ uri: img }} />
       <Spacer pos="top" size="medium" />
-      <NavLink navigateTo="Details">
+      <NavLink navigateTo="Details" params={{ productId: product.id }}>
         <Headline size="h4">{product.title}</Headline>
       </NavLink>
 

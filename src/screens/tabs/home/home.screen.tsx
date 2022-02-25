@@ -36,7 +36,6 @@ export const HomeScreen = () => {
             description="We recommend the best for you"
           />,
         ]}
-        isPlaying
       />
 
       <Spacer pos="top" size="large" />

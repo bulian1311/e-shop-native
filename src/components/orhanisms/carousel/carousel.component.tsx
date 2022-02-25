@@ -1,49 +1,48 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Props } from "./carousel.props";
-import { useInterval } from "../../../hooks";
-import { Animated, Dimensions, Platform } from "react-native";
+import { Animated, Dimensions } from "react-native";
 import {
   IndicatorsContainer,
   Indicator,
-  StyledAnimatedView,
   StyledView,
+  StyledFlatList,
 } from "./carousel.styled";
 
-export const Carousel = ({ isPlaying, items }: Props) => {
-  const animation = useRef(new Animated.Value(0));
-  const [currentItem, setCurrentItem] = useState(0);
-  const MAX_WIDTH = Dimensions.get("window").width;
-  useInterval(() => handleAnimation(), isPlaying ? 2000 : null);
+export const Carousel = ({ items }: Props) => {
+  const MAX_WIDTH = Dimensions.get("window").width - 32;
 
-  const handleAnimation = () => {
-    let newCurrentImage = currentItem + 1;
-
-    if (newCurrentImage >= items.length) newCurrentImage = 0;
-
-    Animated.spring(animation.current, {
-      toValue: -(MAX_WIDTH * newCurrentImage),
-      useNativeDriver: Platform.OS === "web" ? false : true,
-    }).start();
-
-    setCurrentItem(newCurrentImage);
-  };
+  const animation = new Animated.Value(0);
+  const position = Animated.divide(animation, MAX_WIDTH);
 
   return (
     <React.Fragment>
-      <StyledAnimatedView
-        style={{
-          transform: [{ translateX: animation.current }],
-        }}
-      >
-        {items.map((item, idx) => {
-          return <StyledView key={idx}>{item}</StyledView>;
-        })}
-      </StyledAnimatedView>
+      <StyledFlatList
+        data={items}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        decelerationRate={0.8}
+        snapToInterval={MAX_WIDTH}
+        bounces={false}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: animation } } }],
+          { useNativeDriver: false }
+        )}
+        keyExtractor={(item, idx) => idx.toString()}
+        renderItem={(item: any) => (
+          <StyledView widthValue={MAX_WIDTH}>{item.item}</StyledView>
+        )}
+      />
 
       <IndicatorsContainer>
-        {items.map((item, idx) => (
-          <Indicator key={idx} isActive={idx === currentItem} />
-        ))}
+        {items.map((item, idx) => {
+          let opacity = position.interpolate({
+            inputRange: [idx - 1, idx, idx + 1],
+            outputRange: [0.2, 1, 0.2],
+            extrapolate: "clamp",
+          });
+
+          return <Indicator key={idx} style={{ opacity: opacity }} />;
+        })}
       </IndicatorsContainer>
     </React.Fragment>
   );

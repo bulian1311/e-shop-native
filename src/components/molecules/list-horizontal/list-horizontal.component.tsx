@@ -19,6 +19,7 @@ export const ListHorizontal = ({ title, navigateTo, ...props }: Props) => {
       <StyledFlatList
         {...props}
         horizontal={true}
+        decelerationRate={0.8}
         showsHorizontalScrollIndicator={false}
       />
     </React.Fragment>

@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components/native";
 import { Animated, Dimensions } from "react-native";
+import { ReactNode } from "react";
 
-export const StyledAnimatedView = styled(Animated.View)`
-  flex-direction: row;
-`;
+export const StyledFlatList = styled.FlatList``;
 
-export const StyledView = styled.View`
-  width: ${Dimensions.get("window").width}px;
+export const StyledView = styled.View<{
+  widthValue: number;
+}>`
+  width: ${({ widthValue }) => widthValue}px;
 `;
 
 export const IndicatorsContainer = styled.View`
@@ -15,14 +16,12 @@ export const IndicatorsContainer = styled.View`
   margin-top: ${({ theme }) => theme.sizes[1]};
 `;
 
-export const Indicator = styled.View<{ isActive: boolean }>`
-  ${({ theme, isActive }) => css`
+export const Indicator = styled(Animated.View)`
+  ${({ theme }) => css`
     width: ${theme.sizes[1]};
     height: ${theme.sizes[1]};
     border-radius: ${theme.sizes[0]};
     margin-right: ${theme.sizes[1]};
-    background-color: ${isActive
-      ? theme.colors.ui.primary
-      : theme.colors.ui.ghost};
+    background-color: ${theme.colors.ui.primary};
   `}
 `;
