@@ -5,7 +5,12 @@ import { StyledTouchableOpacity } from "./button.styled";
 
 export const Button = ({ children, color, title, ...props }: Props) => {
   return (
-    <StyledTouchableOpacity title={title} color={color} {...props}>
+    <StyledTouchableOpacity
+      activeOpacity={0.6}
+      title={title}
+      color={color}
+      {...props}
+    >
       {children}
       <Paragraph
         weight="bold"

@@ -45,6 +45,7 @@ export const Input = ({ icon, ...props }: Props) => {
     <Container focus={focus}>
       {Icon}
       <StyledTextInput
+        blurOnSubmit
         onFocus={() => {
           setFocus(true);
         }}

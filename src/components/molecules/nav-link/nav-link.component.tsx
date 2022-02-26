@@ -9,6 +9,7 @@ export const NavLink = ({ title, children, navigateTo, params }: Props) => {
 
   return (
     <StyledTouchableOpacity
+      activeOpacity={0.6}
       onPress={() => navigation.navigate({ name: navigateTo, params: params })}
     >
       {title && (
