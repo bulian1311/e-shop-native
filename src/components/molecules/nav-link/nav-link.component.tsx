@@ -11,9 +11,12 @@ export const NavLink = ({ title, children, navigateTo, params }: Props) => {
     <StyledTouchableOpacity
       onPress={() => navigation.navigate({ name: navigateTo, params: params })}
     >
-      <Headline size="h3" color="primary">
-        {title}
-      </Headline>
+      {title && (
+        <Headline size="h3" color="primary">
+          {title}
+        </Headline>
+      )}
+
       {children}
     </StyledTouchableOpacity>
   );

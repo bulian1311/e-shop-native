@@ -2,10 +2,11 @@ import styled, { css } from "styled-components/native";
 import { Props } from "./spacer.props";
 
 const sizes = {
-  small: 1,
-  medium: 2,
-  large: 3,
-  extraLarge: 4,
+  extraSmall: 1,
+  small: 2,
+  medium: 3,
+  large: 4,
+  extraLarge: 5,
 };
 
 const positions = {

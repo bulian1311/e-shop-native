@@ -3,5 +3,5 @@ import { View } from "react-native";
 
 export type Props = ComponentProps<typeof View> & {
   pos?: "top" | "right" | "bottom" | "left";
-  size?: "small" | "medium" | "large" | "extraLarge";
+  size?: "extraSmall" | "small" | "medium" | "large" | "extraLarge";
 };

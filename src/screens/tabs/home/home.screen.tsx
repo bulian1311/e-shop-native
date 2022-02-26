@@ -22,6 +22,7 @@ export const HomeScreen = () => {
       <Spacer pos="top" size="large" />
 
       <Carousel
+        marginX={16}
         items={[
           <Hero
             title="Recomended products"

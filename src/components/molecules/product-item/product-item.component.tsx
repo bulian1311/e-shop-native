@@ -15,43 +15,53 @@ let img =
 export const ProductItem = ({ size, product, withTrash, ...props }: Props) => {
   return (
     <StyledView size={size} product={product} {...props}>
-      <StyledImage source={{ uri: img }} />
-      <Spacer pos="top" size="medium" />
       <NavLink navigateTo="Details" params={{ productId: product.id }}>
+        <StyledImage
+          style={{ resizeMode: "contain" }}
+          size={size}
+          source={{ uri: img }}
+        />
+
+        <Spacer pos="top" size="small" />
+
         <Headline size="h4">{product.title}</Headline>
-      </NavLink>
 
-      <Spacer pos="top" size="medium" />
+        <Spacer pos="top" size="small" />
 
-      {size === "medium" && (
-        <>
-          <Rating rating={4} />
-          <Spacer pos="top" size="medium" />
-        </>
-      )}
-
-      <Headline size="h4" color="primary">
-        {product.price}
-      </Headline>
-      <Spacer pos="top" size="medium" />
-      <DiscountContainer>
-        <Paragraph
-          color="disabled"
-          style={{ textDecorationLine: "line-through" }}
-        >
-          59.99
-        </Paragraph>
-        <Spacer pos="left" size="medium" />
-        <Paragraph weight="bold" color="danger">
-          10% Off
-        </Paragraph>
-        {withTrash && (
+        {size === "medium" && (
           <>
-            <Spacer pos="left" size="large" />
-            <TrashIcon />
+            <Rating rating={4} />
+            <Spacer pos="top" size="small" />
           </>
         )}
-      </DiscountContainer>
+
+        <Headline size="h4" color="primary">
+          {product.price}
+        </Headline>
+
+        <Spacer pos="top" size="small" />
+
+        <DiscountContainer>
+          <Paragraph
+            color="disabled"
+            style={{ textDecorationLine: "line-through" }}
+          >
+            59.99
+          </Paragraph>
+
+          <Spacer pos="left" size="medium" />
+
+          <Paragraph weight="bold" color="danger">
+            10% Off
+          </Paragraph>
+          {withTrash && (
+            <>
+              <Spacer pos="left" size="large" />
+              <TrashIcon />
+            </>
+          )}
+        </DiscountContainer>
+      </NavLink>
     </StyledView>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
-import { StyledFlatList } from "./product-lisr.styled";
-import { ProductItem } from "../../molecules";
+import { ProductItem, ListVertical } from "../../molecules";
 
 const products = [
   { id: "qweqweqwe1", title: "Phone dexp 1", price: 29.99 },
@@ -11,19 +10,10 @@ const products = [
 
 export const ProductList = () => {
   return (
-    <StyledFlatList
+    <ListVertical
       data={products}
       renderItem={({ item }) => <ProductItem size="medium" product={item} />}
       keyExtractor={(item: any) => item.id}
-      // scrollEnabled={false}
-      numColumns={2}
-      showsVerticalScrollIndicator={false}
-      maxToRenderPerBatch={4} //render only 4 items per scroll.
-      columnWrapperStyle={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: 12,
-      }}
     />
   );
 };

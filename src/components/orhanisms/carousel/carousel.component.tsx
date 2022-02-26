@@ -8,8 +8,8 @@ import {
   StyledFlatList,
 } from "./carousel.styled";
 
-export const Carousel = ({ items }: Props) => {
-  const MAX_WIDTH = Dimensions.get("window").width - 32;
+export const Carousel = ({ items, marginX = 1 }: Props) => {
+  const MAX_WIDTH = Dimensions.get("window").width - marginX * 2;
 
   const animation = new Animated.Value(0);
   const position = Animated.divide(animation, MAX_WIDTH);

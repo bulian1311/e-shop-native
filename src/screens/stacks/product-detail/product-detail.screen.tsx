@@ -9,7 +9,7 @@ export const ProductDetailsScreen = () => {
 
   return (
     <StackLayout>
-      <Paragraph>FavoritesScreen</Paragraph>
+      <Paragraph>DetailsScreen</Paragraph>
     </StackLayout>
   );
 };
