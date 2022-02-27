@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Props } from "./carousel.props";
 import { Animated } from "react-native";
 import { useDimensions } from "@react-native-community/hooks";
@@ -13,8 +13,8 @@ export const Carousel = ({ items, marginX = 1 }: Props) => {
   const { window } = useDimensions();
   const MAX_WIDTH = window.width - marginX * 2;
 
-  const animation = new Animated.Value(0);
-  const position = Animated.divide(animation, MAX_WIDTH);
+  const scrollX = useRef(new Animated.Value(0)).current;
+  const position = Animated.divide(scrollX, MAX_WIDTH);
 
   return (
     <React.Fragment>
@@ -25,8 +25,9 @@ export const Carousel = ({ items, marginX = 1 }: Props) => {
         decelerationRate={0.8}
         snapToInterval={MAX_WIDTH}
         bounces={false}
+        scrollEventThrottle={32}
         onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { x: animation } } }],
+          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           { useNativeDriver: false }
         )}
         keyExtractor={(item, idx) => idx.toString()}
