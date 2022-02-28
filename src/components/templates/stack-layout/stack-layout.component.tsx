@@ -1,6 +1,6 @@
 import React from "react";
 import { Props } from "./stack-layout.props";
-import { Container } from "../../atoms";
+import { Container } from "../../../containers";
 import { TopBarBack } from "../../orhanisms";
 import { StyledView } from "./stack-layout.styled";
 

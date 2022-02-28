@@ -25,43 +25,43 @@ export const ProductItem = ({ size, product, withTrash, ...props }: Props) => {
         <Spacer pos="top" size="small" />
 
         <Headline size="h4">{product.title}</Headline>
+      </NavLink>
 
-        <Spacer pos="top" size="small" />
+      <Spacer pos="top" size="small" />
 
-        {size === "medium" && (
+      {size === "medium" && (
+        <>
+          <Rating rating={4} />
+          <Spacer pos="top" size="small" />
+        </>
+      )}
+
+      <Headline size="h4" color="primary">
+        {product.price}
+      </Headline>
+
+      <Spacer pos="top" size="small" />
+
+      <DiscountContainer>
+        <Paragraph
+          color="disabled"
+          style={{ textDecorationLine: "line-through" }}
+        >
+          59.99
+        </Paragraph>
+
+        <Spacer pos="left" size="medium" />
+
+        <Paragraph weight="bold" color="danger">
+          10% Off
+        </Paragraph>
+        {withTrash && (
           <>
-            <Rating rating={4} />
-            <Spacer pos="top" size="small" />
+            <Spacer pos="left" size="large" />
+            <TrashIcon />
           </>
         )}
-
-        <Headline size="h4" color="primary">
-          {product.price}
-        </Headline>
-
-        <Spacer pos="top" size="small" />
-
-        <DiscountContainer>
-          <Paragraph
-            color="disabled"
-            style={{ textDecorationLine: "line-through" }}
-          >
-            59.99
-          </Paragraph>
-
-          <Spacer pos="left" size="medium" />
-
-          <Paragraph weight="bold" color="danger">
-            10% Off
-          </Paragraph>
-          {withTrash && (
-            <>
-              <Spacer pos="left" size="large" />
-              <TrashIcon />
-            </>
-          )}
-        </DiscountContainer>
-      </NavLink>
+      </DiscountContainer>
     </StyledView>
   );
 };

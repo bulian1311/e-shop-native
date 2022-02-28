@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../../atoms";
+import { Container } from "../../../containers";
 import { TopBarSearch } from "../../orhanisms";
 import { Props } from "./tab-layout.props";
 import { StyledView } from "./tab-layout.styled";
