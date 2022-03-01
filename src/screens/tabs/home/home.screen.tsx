@@ -18,7 +18,7 @@ export const HomeScreen = () => {
     <Container>
       <AnimatedScrollY ref={scrollY}>
         <Spacer />
-        <TopBarSearch nativeID="2" />
+        <TopBarSearch />
       </AnimatedScrollY>
 
       <ProductList

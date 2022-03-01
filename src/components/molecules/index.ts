@@ -6,3 +6,5 @@ export * from "./nav-link";
 export * from "./category-item";
 export * from "./list-horizontal";
 export * from "./list-vertical";
+export * from "./size-picker-item";
+export * from "./color-picker-item";

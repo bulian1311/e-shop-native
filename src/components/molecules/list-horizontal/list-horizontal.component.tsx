@@ -11,13 +11,15 @@ export const ListHorizontal = ({ title, navigateTo, ...props }: Props) => {
         <Headline size="h3" color="dark">
           {title}
         </Headline>
-        <NavLink title="See More" navigateTo={navigateTo} />
+
+        {navigateTo && <NavLink title="See More" navigateTo={navigateTo} />}
       </StyledView>
 
       <Spacer pos="top" size="medium" />
 
       <StyledFlatList
         {...props}
+        bounces={false}
         horizontal={true}
         decelerationRate={0.8}
         showsHorizontalScrollIndicator={false}

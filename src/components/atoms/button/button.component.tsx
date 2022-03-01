@@ -11,14 +11,16 @@ export const Button = ({ children, color, title, ...props }: Props) => {
       color={color}
       {...props}
     >
+      {title && (
+        <Paragraph
+          weight="bold"
+          color={color === "primary" ? "light" : "disabled"}
+          size="button"
+        >
+          {title}
+        </Paragraph>
+      )}
       {children}
-      <Paragraph
-        weight="bold"
-        color={color === "primary" ? "light" : "disabled"}
-        size="button"
-      >
-        {title}
-      </Paragraph>
     </StyledTouchableOpacity>
   );
 };

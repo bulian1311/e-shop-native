@@ -5,3 +5,5 @@ export * from "./carousel";
 export * from "./category-list-horizontal";
 export * from "./flsh-fale";
 export * from "./mega-sale";
+export * from "./size-picker";
+export * from "./color-picker";
