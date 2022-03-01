@@ -7,7 +7,8 @@ import {
 } from "react-native";
 
 export type Props = {
-  style?: StyleProp<ViewStyle>;
+  contentContainerStyle?: StyleProp<ViewStyle>;
+  columnWrapperStyle?: StyleProp<ViewStyle>;
   listHeaderComponent?: React.ReactElement;
   listFooterComponent?: React.ReactElement;
   onScroll?: (e: NativeSyntheticEvent<NativeScrollEvent>) => void;

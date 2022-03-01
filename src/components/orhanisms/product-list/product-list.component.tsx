@@ -11,20 +11,22 @@ const products = [
 ];
 
 export const ProductList = ({
-  style,
   onScroll,
+  contentContainerStyle,
+  columnWrapperStyle,
   listHeaderComponent,
   listFooterComponent,
 }: Props) => {
   return (
     <ListVertical
-      style={style}
       onScroll={onScroll}
       ListHeaderComponent={listHeaderComponent}
       ListFooterComponent={listFooterComponent}
       data={products}
       renderItem={({ item }) => <ProductItem size="medium" product={item} />}
       keyExtractor={(item: any) => item.id}
+      contentContainerStyle={contentContainerStyle}
+      columnWrapperStyle={columnWrapperStyle}
     />
   );
 };
