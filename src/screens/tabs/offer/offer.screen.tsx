@@ -1,12 +1,32 @@
 import React from "react";
-import { Props } from "./offer.props";
-import { TabLayout } from "../../../components";
-import { StyledView, StyledText } from "./offer.styled";
+import { StyledView } from "./offer.styled";
+import { Spacer, Headline, Info, Hero } from "../../../components";
+import { Container } from "../../../containers";
 
-export const OfferScreen = ({ ...props }: Props) => {
+export const OfferScreen = () => {
   return (
-    <TabLayout {...props}>
-      <StyledText>OfferScreen</StyledText>
-    </TabLayout>
+    <Container>
+      <StyledView>
+        <Headline size="h2">Offer</Headline>
+      </StyledView>
+
+      <Spacer />
+
+      <Info message="Use “MEGSL” Cupon For Get 90%off" />
+
+      <Spacer />
+
+      <Hero title="Super Sale 50% Off" description="Special birthday Lafyuu" />
+
+      <Spacer />
+
+      <Hero title="Super Sale 50% Off" description="Special birthday Lafyuu" />
+
+      <Spacer />
+
+      <Hero title="Super Sale 50% Off" description="Special birthday Lafyuu" />
+
+      <Spacer />
+    </Container>
   );
 };

@@ -7,7 +7,7 @@ export const StyledAnimatedView = styled(Animated.View)`
   top: 0;
   left: 16px;
   z-index: 100;
-  padding-top: 30px;
+  padding-top: 38px;
   background-color: ${({ theme }) => theme.colors.bg.primary};
 `;
 

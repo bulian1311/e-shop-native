@@ -12,4 +12,5 @@ export type Props = {
   listHeaderComponent?: React.ReactElement;
   listFooterComponent?: React.ReactElement;
   onScroll?: (e: NativeSyntheticEvent<NativeScrollEvent>) => void;
+  productAction?: "add-favorite" | "delete-favorite";
 };

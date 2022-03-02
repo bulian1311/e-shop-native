@@ -17,7 +17,6 @@ export const HomeScreen = () => {
   return (
     <Container>
       <AnimatedScrollY ref={scrollY}>
-        <Spacer />
         <TopBarSearch />
       </AnimatedScrollY>
 
@@ -28,6 +27,7 @@ export const HomeScreen = () => {
         contentContainerStyle={{ paddingTop: 90 }}
         listHeaderComponent={<HomeHeader />}
         listFooterComponent={<Spacer pos="top" size="medium" />}
+        productAction="add-favorite"
       />
     </Container>
   );

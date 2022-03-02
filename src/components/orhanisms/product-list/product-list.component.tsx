@@ -16,14 +16,19 @@ export const ProductList = ({
   columnWrapperStyle,
   listHeaderComponent,
   listFooterComponent,
+  productAction,
 }: Props) => {
+  const renderItem = ({ item }: any) => (
+    <ProductItem size="medium" product={item} action={productAction} />
+  );
+
   return (
     <ListVertical
       onScroll={onScroll}
       ListHeaderComponent={listHeaderComponent}
       ListFooterComponent={listFooterComponent}
       data={products}
-      renderItem={({ item }) => <ProductItem size="medium" product={item} />}
+      renderItem={renderItem}
       keyExtractor={(item: any) => item.id}
       contentContainerStyle={contentContainerStyle}
       columnWrapperStyle={columnWrapperStyle}

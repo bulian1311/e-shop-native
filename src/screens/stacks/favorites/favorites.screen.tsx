@@ -1,12 +1,22 @@
-import React from "react";
-import { Props } from "./favorites.props";
-import { StyledText } from "./favorites.styled";
-import { StackLayout } from "../../../components";
+import React, { useRef } from "react";
+import { Animated } from "react-native";
+import { StackLayout, ProductList, TopBarBack } from "../../../components";
+import { Container, AnimatedScrollY } from "../../../containers";
 
-export const FavoritesScreen = ({ ...props }: Props) => {
+export const FavoritesScreen = () => {
+  const scrollY = useRef(new Animated.Value(0));
+
   return (
-    <StackLayout {...props}>
-      <StyledText>FavoritesScreen</StyledText>
-    </StackLayout>
+    <>
+      <AnimatedScrollY ref={scrollY}>
+        <TopBarBack title="Favorite Product" />
+      </AnimatedScrollY>
+      <Container>
+        <ProductList
+          contentContainerStyle={{ paddingTop: 70 }}
+          productAction="delete-favorite"
+        />
+      </Container>
+    </>
   );
 };
