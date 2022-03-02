@@ -10,6 +10,8 @@ import {
   Rating,
   SizePicker,
   ColorPicker,
+  RecomendedProducts,
+  Button,
 } from "../../../components";
 import {
   StyledImage,
@@ -75,7 +77,7 @@ export const ProductDetailsScreen = () => {
 
       <Spacer size="large" />
 
-      <Paragraph size="title" color="dark">
+      <Paragraph size="title" color="disabled">
         Description
       </Paragraph>
 
@@ -84,6 +86,14 @@ export const ProductDetailsScreen = () => {
       <Paragraph size="body" color="disabled">
         {product.description}
       </Paragraph>
+
+      <Spacer size="large" />
+
+      <RecomendedProducts />
+
+      <Spacer size="large" />
+
+      <Button title="Add To Cart" />
 
       <Spacer size="large" />
     </StackLayout>

@@ -3,7 +3,12 @@ import { Props } from "./button.props";
 import { Paragraph } from "../paragraph";
 import { StyledTouchableOpacity } from "./button.styled";
 
-export const Button = ({ children, color, title, ...props }: Props) => {
+export const Button = ({
+  children,
+  title,
+  color = "primary",
+  ...props
+}: Props) => {
   return (
     <StyledTouchableOpacity
       activeOpacity={0.6}

@@ -7,3 +7,4 @@ export * from "./flsh-fale";
 export * from "./mega-sale";
 export * from "./size-picker";
 export * from "./color-picker";
+export * from "./recomended-products";
