@@ -1,12 +1,12 @@
 import React from "react";
 import { Props } from "./cart.props";
-import { TabLayout } from "../../../components";
+import { LayoutSearch } from "../../../components";
 import { StyledView, StyledText } from "./cart.styled";
 
 export const CartScreen = ({ ...props }: Props) => {
   return (
-    <TabLayout {...props}>
+    <LayoutSearch {...props}>
       <StyledText>Cart</StyledText>
-    </TabLayout>
+    </LayoutSearch>
   );
 };

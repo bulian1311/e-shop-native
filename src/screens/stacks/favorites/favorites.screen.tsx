@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Animated } from "react-native";
-import { StackLayout, ProductList, TopBarBack } from "../../../components";
+import { ProductList, TopBarBack } from "../../../components";
 import { Container, AnimatedScrollY } from "../../../containers";
 
 export const FavoritesScreen = () => {

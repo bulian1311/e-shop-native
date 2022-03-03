@@ -1,12 +1,12 @@
 import React from "react";
-import { StackLayout } from "../../../components";
+import { LayoutBack } from "../../../components";
 import { Props } from "./categories.props";
 import { StyledText } from "./categories.styled";
 
 export const CategoriesScreen = ({ ...props }: Props) => {
   return (
-    <StackLayout {...props}>
+    <LayoutBack {...props}>
       <StyledText>CategoriesScreen</StyledText>
-    </StackLayout>
+    </LayoutBack>
   );
 };

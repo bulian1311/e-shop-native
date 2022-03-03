@@ -1,17 +1,23 @@
 import React, { useRef } from "react";
 import { Animated } from "react-native";
-import { TopBarSearch } from "../../orhanisms";
 import { Container, AnimatedScrollY } from "../../../containers";
-import { StyledScrollView, StyledView } from "./tab-layout.styled";
-import { Props } from "./tab-layout.props";
+import { Headline } from "../../atoms";
+import { Props } from "./layout-title.props";
+import {
+  StyledScrollView,
+  StyledView,
+  StyledHeaderWrapper,
+} from "./layout-title.styled";
 
-export const TabLayout = ({ children, ...props }: Props) => {
+export const LayoutTitle = ({ children, title }: Props) => {
   const scrollY = useRef(new Animated.Value(0));
 
   return (
     <Container>
       <AnimatedScrollY ref={scrollY}>
-        <TopBarSearch />
+        <StyledHeaderWrapper>
+          <Headline size="h2">{title}</Headline>
+        </StyledHeaderWrapper>
       </AnimatedScrollY>
 
       <StyledScrollView
@@ -19,7 +25,6 @@ export const TabLayout = ({ children, ...props }: Props) => {
         onScroll={(e) => {
           scrollY.current.setValue(e.nativeEvent.contentOffset.y);
         }}
-        {...props}
       >
         <StyledView>{children}</StyledView>
       </StyledScrollView>

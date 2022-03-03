@@ -1,11 +1,18 @@
 import React from "react";
 import { Props } from "./explore.props";
-import { TabLayout, Headline, CategoryItem, Spacer } from "../../../components";
+import {
+  LayoutSearch,
+  Headline,
+  CategoryItem,
+  Spacer,
+} from "../../../components";
 import { StyledView } from "./explore.styled";
 
 export const ExploreEcreen = ({ ...props }: Props) => {
   return (
-    <TabLayout {...props}>
+    <LayoutSearch {...props}>
+      <Spacer />
+
       <Headline size="h2">Man Fashion</Headline>
 
       <Spacer />
@@ -27,6 +34,6 @@ export const ExploreEcreen = ({ ...props }: Props) => {
           <CategoryItem style={{ marginBottom: 16 }} key={i} category={item} />
         ))}
       </StyledView>
-    </TabLayout>
+    </LayoutSearch>
   );
 };

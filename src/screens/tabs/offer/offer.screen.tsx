@@ -1,15 +1,9 @@
 import React from "react";
-import { StyledView } from "./offer.styled";
-import { Spacer, Headline, Info, Hero } from "../../../components";
-import { Container } from "../../../containers";
+import { LayoutTitle, Spacer, Info, Hero } from "../../../components";
 
 export const OfferScreen = () => {
   return (
-    <Container>
-      <StyledView>
-        <Headline size="h2">Offer</Headline>
-      </StyledView>
-
+    <LayoutTitle title="Offer">
       <Spacer />
 
       <Info message="Use “MEGSL” Cupon For Get 90%off" />
@@ -27,6 +21,6 @@ export const OfferScreen = () => {
       <Hero title="Super Sale 50% Off" description="Special birthday Lafyuu" />
 
       <Spacer />
-    </Container>
+    </LayoutTitle>
   );
 };

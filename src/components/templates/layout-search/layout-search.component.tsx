@@ -1,17 +1,17 @@
 import React, { useRef } from "react";
 import { Animated } from "react-native";
-import { Props } from "./stack-layout.props";
-import { TopBarBack } from "../../orhanisms";
+import { TopBarSearch } from "../../orhanisms";
 import { Container, AnimatedScrollY } from "../../../containers";
-import { StyledScrollView, StyledView } from "./stack-layout.styled";
+import { StyledScrollView, StyledView } from "./layout-search.styled";
+import { Props } from "./layout-search.props";
 
-export const StackLayout = ({ children, ...props }: Props) => {
+export const LayoutSearch = ({ children, ...props }: Props) => {
   const scrollY = useRef(new Animated.Value(0));
 
   return (
     <Container>
       <AnimatedScrollY ref={scrollY}>
-        <TopBarBack title="Back" />
+        <TopBarSearch />
       </AnimatedScrollY>
 
       <StyledScrollView

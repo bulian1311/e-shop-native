@@ -2,7 +2,7 @@ import React from "react";
 import { useRoute } from "@react-navigation/native";
 import { HeartIcon } from "../../../components/atoms/icons";
 import {
-  StackLayout,
+  LayoutBack,
   Carousel,
   Headline,
   Paragraph,
@@ -48,7 +48,7 @@ export const ProductDetailsScreen = () => {
   ));
 
   return (
-    <StackLayout>
+    <LayoutBack>
       <Carousel items={renderImages} />
       <Spacer />
 
@@ -96,6 +96,6 @@ export const ProductDetailsScreen = () => {
       <Button title="Add To Cart" />
 
       <Spacer size="large" />
-    </StackLayout>
+    </LayoutBack>
   );
 };

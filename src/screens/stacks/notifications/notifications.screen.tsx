@@ -1,6 +1,6 @@
 import React from "react";
-import { StackLayout } from "../../../components";
+import { LayoutBack } from "../../../components";
 
 export const NotificationsScreen = () => {
-  return <StackLayout></StackLayout>;
+  return <LayoutBack></LayoutBack>;
 };
