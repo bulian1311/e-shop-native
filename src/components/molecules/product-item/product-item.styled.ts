@@ -13,11 +13,6 @@ export const StyledView = styled.View<Props>`
   `};
 `;
 
-export const StyledImage = styled.Image<{ size?: "small" | "medium" }>`
-  width: 100%;
-  height: ${({ size = "small" }) => (size === "small" ? "90px" : "110px")};
-`;
-
 export const DiscountContainer = styled.View`
   flex-direction: row;
 `;

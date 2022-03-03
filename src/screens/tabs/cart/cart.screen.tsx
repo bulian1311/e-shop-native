@@ -1,12 +1,11 @@
 import React from "react";
-import { Props } from "./cart.props";
-import { LayoutSearch } from "../../../components";
-import { StyledView, StyledText } from "./cart.styled";
+import { LayoutTitle, Spacer, CartList } from "../../../components";
 
-export const CartScreen = ({ ...props }: Props) => {
+export const CartScreen = () => {
   return (
-    <LayoutSearch {...props}>
-      <StyledText>Cart</StyledText>
-    </LayoutSearch>
+    <LayoutTitle title="Product Cart">
+      <Spacer />
+      <CartList />
+    </LayoutTitle>
   );
 };

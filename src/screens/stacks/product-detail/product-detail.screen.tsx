@@ -12,12 +12,9 @@ import {
   ColorPicker,
   RecomendedProducts,
   Button,
+  Image,
 } from "../../../components";
-import {
-  StyledImage,
-  StyledImageContainer,
-  StyledHeadlineContainer,
-} from "./product-details.styled";
+import { StyledHeadlineContainer } from "./product-details.styled";
 
 const product = {
   id: "dsfsdfuiswyeuhsf11",
@@ -42,9 +39,7 @@ export const ProductDetailsScreen = () => {
   console.log(params);
 
   const renderImages = product.images.map((img) => (
-    <StyledImageContainer>
-      <StyledImage style={{ resizeMode: "contain" }} source={{ uri: img }} />
-    </StyledImageContainer>
+    <Image src={img} height={240} />
   ));
 
   return (

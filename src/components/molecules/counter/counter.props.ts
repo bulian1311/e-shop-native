@@ -1,6 +1,4 @@
 import { ComponentProps } from "react";
 import { View } from "react-native";
 
-export type Props = ComponentProps<typeof View> & {
-  item: any;
-};
+export type Props = ComponentProps<typeof View> & {};

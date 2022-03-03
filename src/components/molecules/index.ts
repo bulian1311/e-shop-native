@@ -11,3 +11,4 @@ export * from "./list-vertical";
 export * from "./size-picker-item";
 export * from "./color-picker-item";
 export * from "./info";
+export * from "./counter";
