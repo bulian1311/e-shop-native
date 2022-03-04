@@ -6,6 +6,7 @@ export * from "./nav-tab-icon";
 export * from "./product-item";
 export * from "./category-item";
 export * from "./cart-item";
+export * from "./cart-info";
 export * from "./list-horizontal";
 export * from "./list-vertical";
 export * from "./size-picker-item";
