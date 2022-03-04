@@ -1,11 +1,14 @@
 import React from "react";
 import { Props } from "./account.props";
-import { LayoutTitle, Spacer } from "../../../components";
+import { LayoutTitle, AccountItem, Spacer } from "../../../components";
 
 export const AccountScreen = ({ ...props }: Props) => {
   return (
     <LayoutTitle title="Account" {...props}>
-      <Spacer />
+      <AccountItem type="Profile" />
+      <AccountItem type="Order" />
+      <AccountItem type="Addres" />
+      <AccountItem type="Payment" />
     </LayoutTitle>
   );
 };

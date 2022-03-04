@@ -13,3 +13,6 @@ export * from "./size-picker-item";
 export * from "./color-picker-item";
 export * from "./info";
 export * from "./counter";
+export * from "./account-item";
+export * from "./profile-header";
+export * from "./profile-item";

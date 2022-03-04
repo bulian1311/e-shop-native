@@ -5,3 +5,4 @@ export * from "./registration";
 export * from "./login";
 export * from "./notifications";
 export * from "./categories";
+export * from "./profile";
