@@ -14,7 +14,6 @@ export const Container = styled.View<{ focus: boolean }>`
       : props.theme.colors.ui.disabled};
 
   padding: 12px 16px 12px 16px;
-  flex: 1;
   flex-direction: row;
   justify-content: center;
   align-items: center;

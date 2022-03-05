@@ -7,7 +7,7 @@ export const StyledTouchableOpacity = styled.TouchableOpacity<Props>`
     justify-content: center;
     align-items: center;
     border-radius: ${theme.radius[1]};
-    padding: ${theme.sizes[1]}
+    padding: ${theme.sizes[3]}
       ${color === "primary" && `background-color: ${theme.colors.ui.primary}`};
     ${color === "ghost" && `border-width: 1px`};
     ${color === "ghost" && `border-color: ${theme.colors.ui.ghost}`}

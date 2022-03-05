@@ -16,3 +16,6 @@ export * from "./counter";
 export * from "./account-item";
 export * from "./profile-header";
 export * from "./profile-item";
+export * from "./login-form";
+export * from "./register-form";
+export * from "./separator";
