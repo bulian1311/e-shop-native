@@ -15,6 +15,6 @@ export const colors = {
   },
   bg: {
     primary: "#FFFFFF",
-    secondary: "#FFFFFF",
+    secondary: "#40BFFF",
   },
 };

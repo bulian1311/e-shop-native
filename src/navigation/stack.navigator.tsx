@@ -9,6 +9,7 @@ import {
   NotificationsScreen,
   CategoriesScreen,
   ProfileScreen,
+  //WelcomeScreen,
 } from "../screens";
 
 const Stack = createNativeStackNavigator();
@@ -16,6 +17,7 @@ const Stack = createNativeStackNavigator();
 export const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {/* <Stack.Screen name="Welcom" component={WelcomeScreen} /> */}
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Registration" component={RegistrationScreen} />
       <Stack.Screen name="Tabs" component={TabNavigator} />

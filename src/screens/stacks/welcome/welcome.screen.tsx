@@ -1,11 +1,13 @@
 import React from "react";
-import { Props } from "./welcome.props";
-import { StyledView, StyledText } from "./welcome.styled";
+import { useTheme } from "styled-components/native";
+import { LogoIcon } from "../../../components/atoms/icons";
+import { StyledView } from "./welcome.styled";
 
-export const Welcome = ({ ...props }: Props) => {
+export const WelcomeScreen = () => {
+  const { colors } = useTheme();
   return (
-    <StyledView {...props}>
-      <StyledText>Welcome</StyledText>
+    <StyledView>
+      <LogoIcon rectFill={colors.bg.primary} pathFill={colors.ui.primary} />
     </StyledView>
   );
 };
