@@ -2,14 +2,14 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TabNavigator } from "./tab.navigator";
 import {
-  LoginScreen,
-  RegistrationScreen,
   FavoritesScreen,
   ProductDetailsScreen,
   NotificationsScreen,
   CategoriesScreen,
   ProfileScreen,
-  //WelcomeScreen,
+  // LoginScreen,
+  // RegistrationScreen,
+  // WelcomeScreen,
 } from "../screens";
 
 const Stack = createNativeStackNavigator();
@@ -18,8 +18,8 @@ export const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {/* <Stack.Screen name="Welcom" component={WelcomeScreen} /> */}
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Registration" component={RegistrationScreen} />
+      {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
+      {/* <Stack.Screen name="Registration" component={RegistrationScreen} /> */}
       <Stack.Screen name="Tabs" component={TabNavigator} />
       <Stack.Screen name="Favorites" component={FavoritesScreen} />
       <Stack.Screen name="Notifications" component={NotificationsScreen} />

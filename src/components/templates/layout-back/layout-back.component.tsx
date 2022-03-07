@@ -16,6 +16,7 @@ export const LayoutBack = ({ children, ...props }: Props) => {
 
       <StyledScrollView
         showsVerticalScrollIndicator={false}
+        scrollEventThrottle={4}
         onScroll={(e) => {
           scrollY.current.setValue(e.nativeEvent.contentOffset.y);
         }}

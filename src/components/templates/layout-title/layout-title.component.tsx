@@ -22,6 +22,7 @@ export const LayoutTitle = ({ children, title }: Props) => {
 
       <StyledScrollView
         showsVerticalScrollIndicator={false}
+        scrollEventThrottle={4}
         onScroll={(e) => {
           scrollY.current.setValue(e.nativeEvent.contentOffset.y);
         }}

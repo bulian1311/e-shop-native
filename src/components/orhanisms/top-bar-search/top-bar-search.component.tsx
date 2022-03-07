@@ -11,20 +11,16 @@ export const TopBarSearch = ({ ...props }: Props) => {
   const navigation: any = useNavigation();
 
   return (
-    <>
-      <StyledView {...props}>
-        <SearchField />
-        <IconContainer
-          onPress={() => navigation.navigate({ name: "Favorites" })}
-        >
-          <HeartIcon />
-        </IconContainer>
-        <IconContainer
-          onPress={() => navigation.navigate({ name: "Notifications" })}
-        >
-          <BellIcon />
-        </IconContainer>
-      </StyledView>
-    </>
+    <StyledView {...props}>
+      <SearchField />
+      <IconContainer onPress={() => navigation.navigate({ name: "Favorites" })}>
+        <HeartIcon />
+      </IconContainer>
+      <IconContainer
+        onPress={() => navigation.navigate({ name: "Notifications" })}
+      >
+        <BellIcon />
+      </IconContainer>
+    </StyledView>
   );
 };
