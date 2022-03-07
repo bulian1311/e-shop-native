@@ -3,12 +3,15 @@ export const query = `query getProducts($first: Int!) {
     edges {
       node {
         id
-        handle
+        title
+        featuredImage {
+          url
+        }
+      }
     }
   }
-}   
 }`;
 
 export const queryOptions = {
-  variables: { first: 5 },
+  variables: { first: 4 },
 };

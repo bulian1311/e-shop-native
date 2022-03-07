@@ -5,18 +5,20 @@ import { NavLink } from "../nav-link";
 import { Props } from "./product-item.props";
 import { StyledView, DiscountContainer } from "./product-item.styled";
 
-let img =
-  "https://c.dns-shop.ru/thumb/st4/fit/500/500/1ea46f7b719ca9a0d48d18a08e3d9499/6dd7b85859f43f84142cfaf5dd62cb9d274f6173bea8fffc1c7e121e0b8004ef.jpg.webp";
-
 export const ProductItem = ({ size, product, action, ...props }: Props) => {
+  const title: string = `${product.title.substring(0, 30)}...`;
+
   return (
-    <StyledView size={size} product={product} {...props}>
+    <StyledView size={size} {...props}>
       <NavLink navigateTo="Details" params={{ productId: product.id }}>
-        <Image height={size === "small" ? 90 : 110} src={img} />
+        <Image
+          height={size === "small" ? 90 : 110}
+          src={product.featuredImage.url}
+        />
 
         <Spacer pos="top" size="small" />
 
-        <Headline size="h4">{product.title}</Headline>
+        <Headline size="h4">{title}</Headline>
       </NavLink>
 
       <Spacer pos="top" size="small" />
@@ -29,7 +31,7 @@ export const ProductItem = ({ size, product, action, ...props }: Props) => {
       )}
 
       <Headline size="h4" color="primary">
-        {product.price}
+        {29.99}
       </Headline>
 
       <Spacer pos="top" size="small" />

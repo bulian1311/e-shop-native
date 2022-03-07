@@ -1,13 +1,30 @@
 import React from "react";
-
+import { useQuery } from "graphql-hooks";
 import { ProductItem, ListVertical } from "../../molecules";
 import { Props } from "./product-list.props";
+import { query, queryOptions } from "./product-list.graphql";
 
 const products = [
-  { id: "qweqweqwe1", title: "Phone dexp 1", price: 29.99 },
-  { id: "qweqweqwe2", title: "Phone dexp 2", price: 29.99 },
-  { id: "qweqweqwe3", title: "Phone dexp 3", price: 29.99 },
-  { id: "qweqweqwe4", title: "Phone dexp 4", price: 29.99 },
+  {
+    node: {
+      id: "qweqweqwe1",
+      title: "Phone dexp 1",
+      price: 29.99,
+      featuredImage: {
+        url: "https://cdn.shopify.com/s/files/1/0626/7306/0077/products/Image.png?v=1644229648",
+      },
+    },
+  },
+  {
+    node: {
+      id: "qweqweqwe1",
+      title: "Phone dexp 1",
+      price: 29.99,
+      featuredImage: {
+        url: "https://cdn.shopify.com/s/files/1/0626/7306/0077/products/Image.png?v=1644229648",
+      },
+    },
+  },
 ];
 
 export const ProductList = ({
@@ -18,8 +35,12 @@ export const ProductList = ({
   listFooterComponent,
   productAction,
 }: Props) => {
+  const { loading, error, data } = useQuery(query, queryOptions);
+
+  console.log(data);
+
   const renderItem = ({ item }: any) => (
-    <ProductItem size="medium" product={item} action={productAction} />
+    <ProductItem size="medium" product={item.node} action={productAction} />
   );
 
   return (
@@ -29,7 +50,7 @@ export const ProductList = ({
       ListFooterComponent={listFooterComponent}
       data={products}
       renderItem={renderItem}
-      keyExtractor={(item: any) => item.id}
+      keyExtractor={(product: any) => product.node.id}
       contentContainerStyle={contentContainerStyle}
       columnWrapperStyle={columnWrapperStyle}
     />

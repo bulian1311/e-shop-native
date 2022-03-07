@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components/native";
-import { Props } from "./product-item.props";
 
-export const StyledView = styled.View<Props>`
+export const StyledView = styled.View<{ size: string | undefined }>`
   ${({ theme, size = "small" }) => css`
     border-width: 1px;
+    ${size === "small" && "width: 140px"};
     ${size === "medium" && "flex-basis: 48%"};
     padding: ${size === "medium"
       ? theme.spacing.space[4]
