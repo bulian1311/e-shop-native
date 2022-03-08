@@ -31,7 +31,7 @@ export const ProductItem = ({ size, product, action, ...props }: Props) => {
       )}
 
       <Headline size="h4" color="primary">
-        {29.99}
+        {product.priceRange.minVariantPrice.amount}
       </Headline>
 
       <Spacer pos="top" size="small" />

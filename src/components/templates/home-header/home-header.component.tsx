@@ -3,8 +3,7 @@ import { Spacer } from "../../atoms";
 import { Hero } from "../../molecules";
 import {
   Carousel,
-  FlashSale,
-  MegaSale,
+  ProductListHorizontal,
   CategoryListHorizontal,
 } from "../../orhanisms";
 
@@ -35,11 +34,19 @@ export const HomeHeader = () => {
 
       <Spacer pos="top" size="large" />
 
-      <FlashSale />
+      <ProductListHorizontal
+        title="Flash Sale"
+        handle="frontpage"
+        navigateTo="Home"
+      />
 
       <Spacer pos="top" size="large" />
 
-      <MegaSale />
+      <ProductListHorizontal
+        title="Mega Sale"
+        handle="frontpage"
+        navigateTo="Home"
+      />
 
       <Spacer pos="top" size="large" />
 

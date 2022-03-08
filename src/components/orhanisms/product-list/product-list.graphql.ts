@@ -7,11 +7,16 @@ export const query = `query getProducts($first: Int!) {
         featuredImage {
           url
         }
+        priceRange {
+          minVariantPrice {
+            amount
+          }
+        }
       }
     }
   }
 }`;
 
 export const queryOptions = {
-  variables: { first: 4 },
+  variables: { first: 8 },
 };
