@@ -2,11 +2,15 @@ import React from "react";
 import { Paragraph, Headline, Rating, Spacer, Image } from "../../atoms";
 import { TrashIcon, HeartIcon } from "../../atoms/icons";
 import { NavLink } from "../nav-link";
+import { priceFormater } from "../../../utils";
 import { Props } from "./product-item.props";
 import { StyledView, DiscountContainer } from "./product-item.styled";
 
 export const ProductItem = ({ size, product, action, ...props }: Props) => {
   const title: string = `${product.title.substring(0, 30)}...`;
+  const price: string = priceFormater.format(
+    product.priceRange.minVariantPrice.amount
+  );
 
   return (
     <StyledView size={size} {...props}>
@@ -31,7 +35,7 @@ export const ProductItem = ({ size, product, action, ...props }: Props) => {
       )}
 
       <Headline size="h4" color="primary">
-        {product.priceRange.minVariantPrice.amount}
+        {price}
       </Headline>
 
       <Spacer pos="top" size="small" />

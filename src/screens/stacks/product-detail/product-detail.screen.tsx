@@ -15,6 +15,7 @@ import {
   Button,
   Image,
 } from "../../../components";
+import { priceFormater } from "../../../utils";
 import { StyledHeadlineContainer } from "./product-details.styled";
 import { query, queryOptions } from "./product-details.graphql";
 
@@ -26,6 +27,9 @@ const product = {
 export const ProductDetailsScreen = () => {
   const { params }: any = useRoute();
   const { data, loading } = useQuery(query, queryOptions(params.productId));
+  const price =
+    loading ||
+    priceFormater.format(data.product.priceRange.minVariantPrice.amount);
 
   const renderImages =
     loading ||
@@ -51,7 +55,7 @@ export const ProductDetailsScreen = () => {
 
       <Spacer size="small" />
       <Paragraph weight="bold" size="title" color="primary">
-        {data.product.priceRange.minVariantPrice.amount}
+        {price}
       </Paragraph>
 
       <Spacer size="small" />
