@@ -12,6 +12,6 @@ export const StyledWrapper = styled.TouchableOpacity<{ color: string }>`
 export const StyledView = styled.View<{ active: boolean; color: string }>`
   width: 16px;
   height: 16px;
-  background-color: ${({ active, color }) => (active ? "white" : color)};
+  background-color: ${({ active, color }) => (active ? "#fff" : color)};
   border-radius: 8px;
 `;

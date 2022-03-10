@@ -9,8 +9,7 @@ import {
   Paragraph,
   Spacer,
   Rating,
-  SizePicker,
-  ColorPicker,
+  ProductOptions,
   ProductListHorizontal,
   Button,
   Image,
@@ -22,24 +21,30 @@ import { query, queryOptions } from "./product-details.graphql";
 const product = {
   sizes: [6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
   colors: ["#FFC833", "#40BFFF", "#FB7181", "#53D1B6", "#5C61F4", "#223263"],
+  options: [
+    {
+      name: "Size",
+      values: ["Medium", "Small", "Large"],
+      id: "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0T3B0aW9uLzk2NTM0MDI2NjUxOTc=",
+    },
+  ],
 };
 
 export const ProductDetailsScreen = () => {
   const { params }: any = useRoute();
   const { data, loading } = useQuery(query, queryOptions(params.productId));
-  const price =
-    loading ||
-    priceFormater.format(data.product.priceRange.minVariantPrice.amount);
-
-  const renderImages =
-    loading ||
-    data.product.images.edges.map((img: any) => (
-      <Image src={img.node.url} height={240} />
-    ));
 
   if (loading) {
     return <Paragraph>Loading...</Paragraph>;
   }
+
+  const renderImages = data.product.images.edges.map((img: any) => (
+    <Image src={img.node.url} height={240} />
+  ));
+
+  const price = priceFormater.format(
+    data.product.priceRange.minVariantPrice.amount
+  );
 
   return (
     <LayoutBack>
@@ -58,11 +63,13 @@ export const ProductDetailsScreen = () => {
         {price}
       </Paragraph>
 
-      <Spacer size="small" />
+      <ProductOptions options={data.product.options} />
+
+      {/* <Spacer size="small" />
       <SizePicker sizes={product.sizes} />
 
       <Spacer size="small" />
-      <ColorPicker colors={product.colors} />
+      <ColorPicker colors={product.colors} /> */}
 
       <Spacer size="large" />
       <Paragraph size="title" color="disabled">

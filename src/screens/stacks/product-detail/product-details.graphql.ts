@@ -14,6 +14,11 @@ export const query = `query getProductById($productId: ID!) {
         }
       }
     }
+    options {
+      name
+      values
+      id
+    }
   }
 }`;
 
